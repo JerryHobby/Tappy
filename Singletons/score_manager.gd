@@ -4,7 +4,7 @@ enum {UNIT_NEUTRAL, UNIT_ENEMY, UNIT_ALLY}
 enum Named {THING_1, THING_2, ANOTHER_THING = -1}
 
 # syntax 1
-var _high_score:int = 5: 
+var _high_score:int = 0: 
 	get: return _high_score
 	set(score): 
 		_high_score = score
@@ -19,6 +19,7 @@ var _score:int = 0:
 
 func get_score() -> int:
 	return _score
+
 
 func get_high_score() -> int:
 	return _high_score

@@ -9,8 +9,6 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	fader.play("fade_in")
-	await get_tree().create_timer(.5).timeout
 	spawn_timer.wait_time = GameManager.SPAWN_TIME
 	ScoreManager.reset_score()
 	SignalManager.on_plane_died.connect(on_plane_died)
@@ -47,7 +45,3 @@ func _on_spawn_timer_timeout():
 
 func on_plane_died():
 	stop_pipes()
-	fader.play("fade_out")
-	await get_tree().create_timer(1).timeout
-	GameManager.load_game_over_scene()
-

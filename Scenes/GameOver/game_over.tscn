@@ -14,6 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_lgt1s")
 
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,32 +30,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -127.0
+offset_top = -24.5
+offset_right = 127.0
+offset_bottom = 24.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Game Over"
 label_settings = ExtResource("1_7wewh")
 
 [node name="PressSpaceLabel" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -127.0
-offset_top = 87.0
-offset_right = 127.0
-offset_bottom = 136.0
+offset_left = -139.5
+offset_top = -50.5
+offset_right = 139.5
+offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Press Space
 to Quit"
 label_settings = ExtResource("2_onfds")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 1
@@ -71,3 +74,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "000"
 label_settings = ExtResource("1_7wewh")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

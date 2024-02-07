@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c83272hk5bx8v"]
+[gd_scene load_steps=8 format=3 uid="uid://c83272hk5bx8v"]
 
 [ext_resource type="Script" path="res://Scenes/Game/game.gd" id="1_hp5o4"]
 [ext_resource type="Texture2D" uid="uid://dpotgtqxafj3i" path="res://assets/background/rocks_2.png" id="1_nw01k"]
@@ -6,68 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://clvor1cwy20ak" path="res://Scenes/Barrier/barrier.tscn" id="3_axxh6"]
 [ext_resource type="PackedScene" uid="uid://dt4pinjtsbgix" path="res://Scenes/Pipes/pipes.tscn" id="4_8owj2"]
 [ext_resource type="PackedScene" uid="uid://bxnt1uru01xbr" path="res://Scenes/Hud/hud.tscn" id="6_v6eaj"]
-
-[sub_resource type="Animation" id="Animation_j2etj"]
-resource_name = "fade_out"
-length = 1.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fader/ColorRect:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Fader/ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(10.5561, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_sodrm"]
-resource_name = "fade_in"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fader/ColorRect:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Fader/ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.307786, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jl2v5"]
-_data = {
-"fade_in": SubResource("Animation_sodrm"),
-"fade_out": SubResource("Animation_j2etj")
-}
+[ext_resource type="PackedScene" uid="uid://ds8m5vrd1xq4p" path="res://Scenes/GameOver/game_over.tscn" id="7_2awgq"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_hp5o4")
@@ -100,19 +39,8 @@ position = Vector2(65, 82)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource("7_2awgq")]
+
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("6_v6eaj")]
-
-[node name="Fader" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_jl2v5")
-}
-
-[node name="ColorRect" type="ColorRect" parent="Fader"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.000664234)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

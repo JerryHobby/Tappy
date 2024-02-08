@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8iptplni5mdp"]
+[gd_scene load_steps=10 format=3 uid="uid://b8iptplni5mdp"]
 
 [ext_resource type="LabelSettings" uid="uid://bgynuamh6dafx" path="res://assets/sh_72_title.tres" id="1_80erf"]
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_vov2t"]
@@ -6,6 +6,7 @@
 [ext_resource type="LabelSettings" uid="uid://xelgpio4e0pl" path="res://assets/sh_24_red.tres" id="3_yerhh"]
 [ext_resource type="Texture2D" uid="uid://beg0y3ndk73co" path="res://assets/background/sky.png" id="4_nuu2g"]
 [ext_resource type="Texture2D" uid="uid://06o10wgaoum2" path="res://assets/plane/planes_sheet.png" id="6_pg1g8"]
+[ext_resource type="AudioStream" uid="uid://b8lfbojp0kdbu" path="res://assets/audio/bgm_menu.mp3" id="7_ypnjk"]
 
 [sub_resource type="Animation" id="Animation_rt70u"]
 resource_name = "flash"
@@ -121,3 +122,7 @@ libraries = {
 "": SubResource("AnimationLibrary_hvsvg")
 }
 autoplay = "flash"
+
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ypnjk")
+autoplay = true

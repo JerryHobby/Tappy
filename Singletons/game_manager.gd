@@ -12,6 +12,10 @@ const SPAWN_TIME: float = 3
 const SPAWN_TIME_MIN: float = 1.5
 const SPAWN_TIME_DEC: float = 0.05
 
+# keyboard map
+const KB_FLY: String = "spacebar"
+const KB_CONTINUE: String = "spacebar"
+
 # scenes
 const main_scene:PackedScene = preload("res://Scenes/Main/main.tscn")
 const game_scene:PackedScene = preload("res://Scenes/Game/game.tscn")

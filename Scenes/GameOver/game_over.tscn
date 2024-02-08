@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ds8m5vrd1xq4p"]
+[gd_scene load_steps=5 format=3 uid="uid://ds8m5vrd1xq4p"]
 
 [ext_resource type="LabelSettings" uid="uid://c6214midpasn0" path="res://assets/sh_48_red.tres" id="1_7wewh"]
 [ext_resource type="Script" path="res://Scenes/GameOver/game_over.gd" id="1_lgt1s"]
 [ext_resource type="LabelSettings" uid="uid://dbo6x5dha1oe4" path="res://assets/sh_48_white.tres" id="2_onfds"]
+[ext_resource type="AudioStream" uid="uid://lf5xex6av1rb" path="res://assets/audio/game_over.wav" id="4_0dvn1"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -59,24 +60,11 @@ label_settings = ExtResource("2_onfds")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScoreLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -215.0
-offset_top = -405.0
-offset_right = 64.0
-offset_bottom = -356.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "000"
-label_settings = ExtResource("1_7wewh")
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0dvn1")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

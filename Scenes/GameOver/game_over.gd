@@ -1,8 +1,8 @@
 extends Control
-@onready var score_label = $ScoreLabel
 @onready var game_over_label = $GameOverLabel
 @onready var press_space_label = $PressSpaceLabel
 @onready var timer = $Timer
+@onready var game_over_sound = $GameOverSound
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,17 +10,17 @@ func _ready():
 	hide()
 	SignalManager.on_plane_died.connect(on_plane_died)
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-
-	if Input.is_action_just_pressed("fly"):
-		if visible:
-			GameManager.load_main_scene()
+	if press_space_label.visible \
+	and Input.is_action_just_pressed(GameManager.KB_CONTINUE):
+		GameManager.load_main_scene()
 
 
 func on_plane_died():
-	score_label.text = str(ScoreManager.get_score())
 	show()
+	game_over_sound.play()
 	timer.start()
 
 

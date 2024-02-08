@@ -4,7 +4,7 @@ extends Node
 const GROUP_PLAYER: String = "player"
 
 # difficulty constants
-const SCROLL_SPEED: float = 140.0
+const SCROLL_SPEED: float = 120.0
 const GRAVITY: float = 1500
 const POWER: float = -475
 

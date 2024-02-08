@@ -18,7 +18,9 @@ func _process(_delta):
 		ScoreManager.reset_high_score()
 		high_score.text = str(ScoreManager.get_high_score())
 
-
+	if Input.is_action_just_pressed(GameManager.KB_GODMODE):
+		GameManager.set_god_mode(!GameManager.get_god_mode())
+		
 func _on_reset_button_pressed():
 	print("Button")
 	ScoreManager.reset_high_score()

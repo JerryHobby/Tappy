@@ -107,13 +107,13 @@ label_settings = ExtResource("3_yerhh")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ResetLabel" type="Label" parent="MarginContainer"]
+[node name="CmdLabel" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-text = "(R)eset"
+text = "(R)eset
+(G)od mode"
 label_settings = ExtResource("3_yerhh")
-horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="HighScore" type="Label" parent="MarginContainer"]

@@ -107,11 +107,20 @@ label_settings = ExtResource("3_yerhh")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ResetLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "(R)eset"
+label_settings = ExtResource("3_yerhh")
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="HighScore" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-text = "0000"
+text = "0"
 label_settings = ExtResource("3_yerhh")
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -125,4 +134,3 @@ autoplay = "flash"
 
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ypnjk")
-autoplay = true

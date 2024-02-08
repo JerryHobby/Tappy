@@ -4,12 +4,22 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SignalManager.load_game_data.emit()
 	high_score.text = str(ScoreManager.get_high_score())
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed(GameManager.KB_CONTINUE):
 		GameManager.load_game_scene()
+		
+	if Input.is_action_just_pressed(GameManager.KB_RESET):
+		ScoreManager.reset_high_score()
+		high_score.text = str(ScoreManager.get_high_score())
+
+
+func _on_reset_button_pressed():
+	print("Button")
+	ScoreManager.reset_high_score()
 

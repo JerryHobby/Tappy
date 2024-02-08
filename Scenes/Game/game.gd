@@ -4,7 +4,6 @@ extends Node2D
 @onready var spawn_u = $SpawnU
 @onready var spawn_l = $SpawnL
 @onready var spawn_timer = $SpawnTimer
-@onready var fader = $Fader
 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,10 +12,11 @@ func _ready():
 	ScoreManager.reset_score()
 	SignalManager.on_plane_died.connect(on_plane_died)
 	spawn_pipes()
+	spawn_timer.start()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 

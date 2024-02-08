@@ -19,7 +19,7 @@ rotation = -3.14159
 position = Vector2(2.08165e-12, 80)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(2, -3.8147e-06)
+position = Vector2(16, -1.35525e-20)
 scale = Vector2(1, 10.1)
 
 [node name="ScoreSound" type="AudioStreamPlayer2D" parent="."]

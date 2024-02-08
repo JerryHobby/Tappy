@@ -4,17 +4,18 @@ extends Node
 const GROUP_PLAYER: String = "player"
 
 # difficulty constants
-const SCROLL_SPEED: float = 120.0
+const SCROLL_SPEED: float = 140.0
 const GRAVITY: float = 1500
-const POWER: float = -500
+const POWER: float = -475
 
-const SPAWN_TIME: float = 3
-const SPAWN_TIME_MIN: float = 1.5
+const SPAWN_TIME: float = 2.0
+const SPAWN_TIME_MIN: float = 1.25
 const SPAWN_TIME_DEC: float = 0.05
 
 # keyboard map
 const KB_FLY: String = "spacebar"
 const KB_CONTINUE: String = "spacebar"
+const KB_RESET: String = "reset"
 
 # scenes
 const main_scene:PackedScene = preload("res://Scenes/Main/main.tscn")

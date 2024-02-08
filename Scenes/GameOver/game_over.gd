@@ -12,7 +12,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if press_space_label.visible \
 	and Input.is_action_just_pressed(GameManager.KB_CONTINUE):
 		GameManager.load_main_scene()

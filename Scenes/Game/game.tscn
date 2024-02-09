@@ -15,7 +15,7 @@ pipes_scene = ExtResource("4_8owj2")
 [node name="ScrollingBG" parent="." instance=ExtResource("3_qdl8p")]
 
 [node name="Barrier" parent="." instance=ExtResource("3_axxh6")]
-position = Vector2(2, -29)
+position = Vector2(2, -1)
 
 [node name="Floor" parent="." instance=ExtResource("3_axxh6")]
 position = Vector2(2, 872)

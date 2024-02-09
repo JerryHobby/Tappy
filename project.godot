@@ -13,6 +13,7 @@ config_version=5
 config/name="Tappy"
 run/main_scene="res://Scenes/Main/main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -25,7 +26,8 @@ SaveLoad="*res://Singletons/save_load.gd"
 [display]
 
 window/size/viewport_width=480
-window/size/viewport_height=854
+window/size/viewport_height=855
+window/stretch/mode="canvas_items"
 window/handheld/orientation=1
 
 [importer_defaults]

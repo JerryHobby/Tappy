@@ -26,6 +26,7 @@ func spawn_pipes() -> void:
 		spawn_u.position.y, 
 		spawn_l.position.y)
 		
+	spawn_u.position.x = get_viewport_rect().size.x + 100
 	newPipes.position = Vector2(spawn_u.position.x, y_pos)
 	pipes_holder.add_child(newPipes)
 	

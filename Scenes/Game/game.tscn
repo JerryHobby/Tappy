@@ -26,10 +26,10 @@ position = Vector2(2, 872)
 wait_time = 2.5
 
 [node name="SpawnU" type="Marker2D" parent="."]
-position = Vector2(530, 340)
+position = Vector2(530, 283)
 
 [node name="SpawnL" type="Marker2D" parent="."]
-position = Vector2(530, 543)
+position = Vector2(530, 566)
 
 [node name="Plane" parent="." instance=ExtResource("2_mxtg8")]
 position = Vector2(65, 82)

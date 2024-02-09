@@ -8,9 +8,9 @@ const SCROLL_SPEED: float = 120.0
 const GRAVITY: float = 1500
 const POWER: float = -475
 
-const SPAWN_TIME: float = 2.0
-const SPAWN_TIME_MIN: float = 1.25
-const SPAWN_TIME_DEC: float = 0.05
+const SPAWN_TIME: float = 2.5
+const SPAWN_TIME_MIN: float = 1.5
+const SPAWN_TIME_DEC: float = 0.01
 
 # keyboard map
 const KB_FLY: String = "spacebar"
